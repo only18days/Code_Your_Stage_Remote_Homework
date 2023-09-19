@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useCookies } from "react-cookie";
+import useSWRFetch from "../useSWRFetch";
 
 const usePostSkills = () => {
   const [, setCookie] = useCookies(["studentId"]);

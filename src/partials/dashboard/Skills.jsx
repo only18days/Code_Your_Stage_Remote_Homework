@@ -51,7 +51,14 @@ function Skills() {
   const [allvalue, setAllvalue] = useState();
   // const { labels, values } = skills;
   // console.log('skills',skills);
-  const { newLabels, newValues } =  getValue(studentId).then(values => setAllvalue([Object.keys(values), Object.values(values)]));
+
+  // const { newLabels, newValues } =  getValue(studentId).then(values => setAllvalue([Object.keys(values), Object.values(values)]));
+  useEffect(() => {
+    getValue(studentId).then(values => {
+      setAllvalue([Object.keys(values), Object.values(values)]);
+    });
+  }, []);
+  
   // console.log(newLabels, newValues);
 
   // if (allvalue!==undefined) {console.log('vvv', allvalue[0])};
